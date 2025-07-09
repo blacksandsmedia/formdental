@@ -1,0 +1,29 @@
+🦷 FORM DENTAL - REPLACE PLACEHOLDER IMAGES 🦷
+
+I've created your website with placeholder images. To complete your site, 
+please replace these 4 files with your beautiful smile photos:
+
+REPLACE THESE FILES:
+📄 smile-1.jpg ← The confident male smile (used as background image)
+📄 smile-2.jpg ← The female smile with coral lips (About section)  
+📄 smile-3.jpg ← The open mouth smile (Services section)
+📄 smile-4.jpg ← The close-up female smile (Experience section)
+
+HOW TO REPLACE:
+1. Right-click on each photo you want to use
+2. Save them to this 'images' folder
+3. Rename them exactly as: smile-1.jpg, smile-2.jpg, smile-3.jpg, smile-4.jpg
+4. Refresh your browser at http://localhost:8000
+
+✨ The images are now spread throughout your homepage:
+• smile-1.jpg = Full-width background section with text overlay
+• smile-2.jpg = About section (next to Dr. Phillips text)
+• smile-3.jpg = Floating accent in Services section  
+• smile-4.jpg = Experience section image
+
+🎨 LOGO UPDATES COMPLETED:
+• 'FORM' now has 100px letter spacing and normal weight
+• 'DENTAL' is smaller with 200px letter spacing
+• Line spacing is 1.4 between them
+
+Your website will look stunning once you add the real photos!
