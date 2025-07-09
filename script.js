@@ -1,19 +1,62 @@
-// Mobile Navigation Toggle
+// Enhanced Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
     
+    // Toggle mobile menu
     navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
+        const isActive = navMenu.classList.contains('active');
+        
+        if (isActive) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
+    
+    // Open mobile menu
+    function openMobileMenu() {
+        navMenu.classList.add('active');
+        navToggle.classList.add('active');
+        body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        body.style.overflow = ''; // Restore scroll
+    }
     
     // Close menu when clicking on a link
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+            closeMobileMenu();
         });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
+        
+        if (!isClickInsideNav && navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
     });
 });
 
@@ -135,49 +178,68 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile Navigation Styles
+// Enhanced Mobile Navigation Styles
 const mobileNavStyles = `
+    /* Mobile hamburger animation */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Smooth transitions for mobile menu */
     @media (max-width: 768px) {
-        .nav-menu {
-            position: fixed;
-            top: 70px;
-            right: -100%;
-            width: 100%;
-            height: calc(100vh - 70px);
-            background-color: var(--white);
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 2rem;
-            transition: right 0.3s ease;
-            box-shadow: var(--shadow);
+        .nav-toggle span {
+            transition: all 0.3s ease;
         }
         
-        .nav-menu.active {
-            right: 0;
+        .dropdown-menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            background-color: var(--secondary-color);
+            margin: 0.5rem 0;
+            border-radius: 8px;
         }
         
-        .nav-menu li {
-            margin: 1rem 0;
+        .dropdown-menu a {
+            font-size: 1rem;
+            padding: 1rem 1.5rem;
+        }
+        
+        /* Touch-friendly improvements */
+        .nav-menu a {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        
+        /* Prevent zoom on input focus (iOS) */
+        input, textarea, select {
+            font-size: 16px !important;
+        }
+    }
+    
+    /* Very small screens */
+    @media (max-width: 320px) {
+        .hero-content h2 {
+            font-size: 1.8rem !important;
+        }
+        
+        .service-card {
+            padding: 1.2rem !important;
         }
         
         .nav-menu a {
-            font-size: 1.2rem;
-            padding: 1rem;
-            display: block;
-            text-align: center;
-        }
-        
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
+            font-size: 1rem !important;
+            padding: 1rem !important;
         }
     }
 `;

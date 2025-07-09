@@ -1780,10 +1780,65 @@ p {
     margin-right: auto;
 }
 
-/* Responsive Design */
+/* Responsive Design - Enhanced Mobile Experience */
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+}
+
+/* Mobile landscape and small tablets */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: var(--shadow);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+        width: 90%;
+    }
+    
+    .nav-menu a {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+        display: block;
+        text-align: center;
+        width: 100%;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-menu a:hover {
+        background-color: var(--secondary-color);
     }
     
     .nav-toggle {
@@ -1802,12 +1857,24 @@ p {
         font-size: 0.8rem;
     }
     
+    .hero {
+        min-height: 60vh;
+        padding: 2rem 0;
+    }
+    
     .hero-content h2 {
         font-size: 2.5rem;
+        line-height: 1.2;
     }
     
     .hero-content p {
         font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-button {
+        padding: 1.2rem 2rem;
+        font-size: 1rem;
     }
     
     .about-content,
@@ -1817,18 +1884,91 @@ p {
     .couple-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        text-align: center;
     }
     
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
     }
     
     .showcase-content h2 {
         font-size: 2.5rem;
+        line-height: 1.2;
     }
     
     .showcase-content p {
         font-size: 1.1rem;
+    }
+    
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+    }
+    
+    /* Touch-friendly buttons */
+    .dropdown-menu a {
+        padding: 1rem 1.5rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Mobile image optimization */
+    .results-smile-image,
+    .experience-smile-image,
+    .couple-photo {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    /* Mobile sections spacing */
+    .about,
+    .services,
+    .experience,
+    .contact,
+    .results-showcase,
+    .couple-showcase {
+        padding: 3rem 0;
+    }
+    
+    /* Mobile service pages */
+    .service-hero {
+        padding: 6rem 0 2rem;
+    }
+    
+    .service-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .service-content {
+        padding: 3rem 0;
+    }
+    
+    .service-section {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-cta {
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
     }
     
     .fees-grid {
@@ -1888,39 +2028,116 @@ p {
     }
 }
 
+/* Small mobile devices */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        min-height: 50vh;
+        padding: 1.5rem 0;
+    }
+    
     .hero-content h2 {
         font-size: 2rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-button {
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
     }
     
     .logo-main {
         font-size: 1.5rem;
+        letter-spacing: 2px;
     }
     
     .logo-sub {
         font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 1.2rem;
     }
     
     .service-card,
     .contact-form,
     .fee-category {
         padding: 1.5rem;
+        margin-bottom: 1rem;
     }
     
-
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service-card p {
+        font-size: 0.95rem;
+    }
     
     .showcase-content h2 {
         font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .showcase-content p {
+        font-size: 1rem;
     }
     
     .results-smile-image,
     .experience-smile-image {
-        max-width: 300px;
+        max-width: 280px;
     }
     
     .about-text,
     .experience-text {
         padding: 0;
+    }
+    
+    /* Mobile form improvements */
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+    
+    .form-group textarea {
+        min-height: 120px;
+    }
+    
+    /* Mobile section headings */
+    h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Mobile spacing */
+    .about,
+    .services,
+    .experience,
+    .contact,
+    .results-showcase,
+    .couple-showcase {
+        padding: 2rem 0;
     }
     
     .fees-hero h1 {
