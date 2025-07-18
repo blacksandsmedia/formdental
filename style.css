@@ -83,6 +83,12 @@ p {
     flex-direction: column;
     align-items: center;
     line-height: 1.4;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.nav-brand .logo:hover {
+    opacity: 0.8;
 }
 
 .logo-main {
@@ -797,6 +803,19 @@ p {
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+.footer-brand .logo {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.footer-brand .logo:hover {
+    opacity: 0.8;
 }
 
 .footer-brand .logo-main {
