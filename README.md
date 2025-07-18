@@ -1,6 +1,6 @@
 # FORM DENTAL Website
 
-A professional dental practice website for Dr. Lara Phillips at FORM DENTAL, located in Cambridge, UK.
+A cosmetic-led, comfort-focused dental studio website for FORM DENTAL, located in Cambridge, UK.
 
 ## About
 
@@ -26,7 +26,7 @@ FORM DENTAL offers comprehensive dental care in a comfortable, spa-like environm
 ## Contact Information
 
 **FORM DENTAL**  
-Dr. Lara Phillips  
+Boutique Dental Studio  
 65 London Road, Stapleford  
 Cambridge CB22 5DG  
 

@@ -1931,10 +1931,25 @@ p {
     .results-smile-image,
     .experience-smile-image,
     .couple-photo {
-        max-width: 100%;
+        max-width: 90%;
+        width: 300px;
         height: auto;
         margin: 0 auto;
         display: block;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+    
+    /* Mobile hero background adjustment */
+    .hero {
+        background-size: 150% auto;
+        background-position: center top;
+    }
+    
+    .smile-showcase {
+        background-size: 150% auto;
+        background-position: center center;
+        background-attachment: scroll; /* Better for mobile performance */
     }
     
     /* Mobile sections spacing */
@@ -2097,6 +2112,18 @@ p {
     .results-smile-image,
     .experience-smile-image {
         max-width: 280px;
+        width: 280px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    .couple-photo {
+        max-width: 280px;
+        width: 280px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
     }
     
     .about-text,
